@@ -30,8 +30,6 @@ intro.addEventListener('dragend', function() {
     alert('You Cannot Do That')
 });
 
-focus
-load
 
 
 // $$$ SIX $$$
@@ -42,15 +40,47 @@ body.addEventListener('keydown', function() {
 
 
 // $$$ SEVEN $$$
+window.addEventListener("load", function() {
+    alert("All resources finished loading!");
+  });
+
 
 
 
 // $$$ EIGHT $$$
-
+const navTop = document.querySelector('.nav-link');
+navTop.addEventListener('focusout', function() {
+    navTop.style.color = "orange";
+});
 
 
 // $$$ NINE $$$
+window.addEventListener('resize', function() {
+    alert('Resizing!');
+});
 
 
 
 // $$$ TEN $$$
+const destination = document.querySelector('.content-destination');
+destination.addEventListener('mouseover', function() {
+    destination.style.color = "blue";
+});
+
+const destinationP = document.querySelector('.content-destination p');
+destinationP.addEventListener('mouseover', (event) => {
+    event.stopPropagation();
+    destinationP.style.color = "red";
+});
+
+   
+
+
+
+// $$$ Prevent Default $$$
+const navLink = document.querySelectorAll(".nav-link");
+for (let i = 0; i < navLink.length; i++) {
+    navLink[i].addEventListener("click", function(event) {
+      event.preventDefault();
+    });
+  }
